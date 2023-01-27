@@ -6,9 +6,9 @@ const fs = require('fs')
 
 const simpleAuthURL = 'https://www.textverified.com/Api/SimpleAuthentication'
 const baseURL = 'https://www.textverified.com/api'
-const simpleAccessToken = '1_iZhCjl_z0u7vjfADc5l5Y4TZrS5VdGpos8J3mwslu0faFr3AI7uvCNYjqeq48WQTXVnoD5wx'
+const simpleAccessToken = ''
 const gmailID = 33
-const nikeID = 0
+const nikeID = ''
 
 async function sleep(time) {
     return new Promise(resolve => setTimeout(resolve, time))
