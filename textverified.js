@@ -109,19 +109,23 @@ async function cancelCode(codeID){
     
      console.log('PhoneID', phoneID)
      //await sleep(1111)
-     let getInfo = await getCodeInfo(phoneID)
-     do {
-         await sleep(3333)
-         let getInfo = await getCodeInfo(phoneID)
-         console.log(`SMS for ${getInfo.number} is: ${getInfo.status}`)
-         console.log('SMS Code: ',getInfo.code)
-         console.log('Time Remaining: ', getInfo.time_remaining)
-     }
-     while(getInfo.code == null){
-         await sleep(1111)
-         console.log(getInfo.status)
-         console.log(getInfo.sms)
-         console.log(getInfo.code)
+    while(true){
+        let getInfo = await getCodeInfo(phoneID)
+        console.log('getInfo: ', getInfo)
+        if(getInfo.code == null){
+            let getInfo = await getCodeInfo(phoneID)
+            await sleep(3333)
+            console.log(`SMS for Number -- ${getInfo.number} -- is: ${getInfo.status}`)
+            console.log('SMS Code: ',getInfo.code)
+            console.log('Time Remaining: ', getInfo.time_remaining)
+
+        } else {
+            let getInfo = await getCodeInfo(phoneID)
+            await sleep(3333)
+            console.log('Status is: ',getInfo.status)
+            console.log(getInfo.sms)
+            console.log('Code: ',getInfo.code)
+            return
         
         
      }
