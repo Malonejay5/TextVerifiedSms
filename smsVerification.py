@@ -9,7 +9,7 @@ class textVerified:
 
 
     def auth():
-        simpleAccessToken = '1_iZhCjl_z0u7vjfADc5l5Y4TZrS5VdGpos8J3mwslu0faFr3AI7uvCNYjqeq48WQTXVnoD5wx'
+        simpleAccessToken = ''
         request = req.post('https://www.textverified.com/Api/SimpleAuthentication', headers = {
             "X-SIMPLE-API-ACCESS-TOKEN": simpleAccessToken,
         })
